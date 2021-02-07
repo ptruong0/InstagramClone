@@ -18,6 +18,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     private Context context;
     private List<Post> posts;
 
+    public PostAdapter(MainActivity mainActivity, List<Post> postList) {
+        context = mainActivity;
+        posts = postList;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

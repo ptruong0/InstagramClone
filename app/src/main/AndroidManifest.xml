@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AccountActivity"></activity>
+        <activity android:name=".SignUpActivity"></activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -26,15 +26,25 @@
                 android:resource="@xml/fileprovider" />
         </provider>
 
-        <activity android:name=".NewPostActivity" />
-        <activity android:name=".LoginActivity"> <!-- when app starts, LoginActivity opens -->
+        <activity
+            android:name=".NewPostActivity"
+            android:label="Make a New Post" />
+        <activity
+            android:name=".AccountActivity"
+            android:label="Manage your account" />
+        <activity
+            android:name=".LoginActivity"
+            android:label=""> <!-- when app starts, LoginActivity opens -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:icon="@drawable/nav_logo_whiteout"
+            android:label="Instagram" />
     </application>
 
 </manifest>

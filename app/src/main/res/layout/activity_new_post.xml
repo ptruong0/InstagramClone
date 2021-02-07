@@ -15,7 +15,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
+        android:background="#8CD9F1"
         android:text="Post"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,16 +26,17 @@
 
     <EditText
         android:id="@+id/etDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="373dp"
+        android:layout_height="43dp"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Description"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="46dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnTakePicture"
@@ -57,5 +61,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnTakePicture"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        app:srcCompat="@drawable/nav_logo_whiteout"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="3dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
