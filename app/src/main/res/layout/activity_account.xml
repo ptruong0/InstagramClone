@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".AccountActivity">
+    tools:context=".AccountActivity"
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        app:srcCompat="@drawable/nav_logo_whiteout"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="3dp" />
 
     <Button
         android:id="@+id/btnLogOut"
@@ -22,14 +16,24 @@
         android:layout_height="38dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp"
         android:background="#FA4141"
         android:foregroundTint="#FFFFFF"
         android:text="Log Out"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="108dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
         tools:text="Log Out" />
-</RelativeLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPosts"
+            android:layout_width="match_parent"
+            android:layout_height="389dp"
+            app:layout_constraintTop_toBottomOf="@id/btnLogOut"
+            android:layout_below="@id/btnLogOut"
+            android:padding="8dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

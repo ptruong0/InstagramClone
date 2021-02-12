@@ -6,70 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="571dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="62dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAccount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/instagram_home_outline_24"
-        tools:layout_editor_absoluteY="649dp" />
-
-    <ImageButton
-        android:id="@+id/btnNewPost"
-        android:layout_width="71dp"
-        android:layout_height="75dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="62dp"
-        android:layout_marginBottom="11dp"
-        android:layout_toEndOf="@+id/btnHome"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/btnAccount"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toEndOf="@+id/btnHome"
-        app:srcCompat="@drawable/instagram_new_post_outline_24"
-        tools:layout_editor_absoluteY="649dp" />
-
-    <ImageButton
-        android:id="@+id/btnAccount"
-        android:layout_width="72dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="54dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="13dp"
-        android:layout_toEndOf="@+id/btnNewPost"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/instagram_user_outline_24"
-        tools:layout_editor_absoluteY="649dp" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="159dp"
-        android:layout_height="60dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        app:srcCompat="@drawable/nav_logo_whiteout" />
+        android:id="@+id/imageView4"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        app:srcCompat="@drawable/nav_logo_whiteout"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="3dp" />
+    <FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigation" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="#000000"
+        app:itemTextColor="#000000"
+        app:menu="@menu/menu_bottom_navigation" />
 
 
 </RelativeLayout>
