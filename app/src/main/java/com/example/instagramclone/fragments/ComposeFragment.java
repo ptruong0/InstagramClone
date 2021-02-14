@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -26,7 +27,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.instagramclone.BitmapScaler;
-import com.example.instagramclone.NewPostActivity;
 import com.example.instagramclone.Post;
 import com.example.instagramclone.R;
 import com.parse.ParseException;
@@ -190,5 +190,7 @@ public class ComposeFragment extends Fragment {
 
     private void finishPost() {
         etDescription.setText("");
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        manager.beginTransaction().remove(this).commit();
     }
 }

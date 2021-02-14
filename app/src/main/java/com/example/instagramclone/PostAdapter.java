@@ -16,7 +16,6 @@ import com.parse.ParseFile;
 
 import java.util.List;
 
-@GlideModule
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     private Context context;
@@ -44,11 +43,23 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         return posts.size();
     }
 
+
+    public void clear() {
+        posts.clear();
+        notifyDataSetChanged();
+    }
+
+    public void addAll(List<Post> list) {
+        posts.addAll(list);
+        notifyDataSetChanged();
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvUsername;
         private ImageView ivPostImage;
         private TextView tvDescription;
+        private TextView tvCreatedDate;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,11 +67,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             tvUsername = itemView.findViewById(R.id.tvUsername);
             ivPostImage = itemView.findViewById(R.id.ivPostImage);
             tvDescription = itemView.findViewById(R.id.tvDescription);
+            tvCreatedDate = itemView.findViewById(R.id.tvCreatedDate);
         }
 
         public void bind(Post post) {
-            tvUsername.setText(post.getUser().getUsername());
+            tvUsername.setText("@" + post.getUser().getUsername());
             tvDescription.setText(post.getDescription());
+            tvCreatedDate.setText("Posted on " + post.getDate());
             ParseFile image = post.getImage();
             if (image != null) {
                 Glide.with(context).load(post.getImage().getUrl()).into(ivPostImage);

@@ -26,12 +26,7 @@
                 android:resource="@xml/fileprovider" />
         </provider>
 
-        <activity
-            android:name=".NewPostActivity"
-            android:label="Make a New Post" />
-        <activity
-            android:name=".AccountActivity"
-            android:label="Manage your account" />
+
         <activity
             android:name=".LoginActivity"
             android:label=""> <!-- when app starts, LoginActivity opens -->

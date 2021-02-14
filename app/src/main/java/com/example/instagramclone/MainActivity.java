@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -60,24 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        /*
-        btnNewPost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, NewPostActivity.class);
-                startActivity(i);
-            }
-        });
 
-        btnAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, AccountActivity.class);
-                startActivityForResult(i, REQUEST_CODE);
-            }
-        });*/
-
-        //queryPosts();
     }
 
     @Override
@@ -87,24 +71,6 @@ public class MainActivity extends AppCompatActivity {
         ab.setIcon(R.drawable.icon);
         return super.onCreateOptionsMenu(menu);
     }
-/*
-    private void queryPosts() {
-        ParseQuery<Post> query = ParseQuery.getQuery(Post. class);
-        query.include(Post.KEY_USER);
-        query.findInBackground(new FindCal
-            public void done(List<Post> posts, ParseException e) {
-                if (e != null) {
-                    Log.e(TAG, "Issue with getting posts " + e, e);
-                }
-                else {for (Post post: posts) {
-                    Log.i(TAG, "Post: " + post.getDescription() + ", username: " + post.getUser().getUsername());
-                    //postList.add(post);
-                }}
-
-            }
-        });
-    }
-*/
 
 
 

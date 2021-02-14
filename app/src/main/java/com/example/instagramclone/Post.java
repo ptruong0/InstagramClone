@@ -1,9 +1,15 @@
 package com.example.instagramclone;
 
+import android.util.Log;
+
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @ParseClassName("Post")
 public class Post extends ParseObject {
@@ -34,5 +40,15 @@ public class Post extends ParseObject {
 
     public void setUser(ParseUser user) {
         put(KEY_USER, user);
+    }
+
+
+    public String getDate() {
+        Date d =  getCreatedAt();
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy 'at' hh:mm:ss");
+        return dateFormat.format(d);
+
+
+
     }
 }
